@@ -17,10 +17,11 @@ def sucess(score):
 def fail(score):
     res=""
     if score>60:
-        res="pass"
+        res="PASS"
     else:
-        res="fail"
-    return render_template('results.html',result=res)
+        res='FAIL'
+    exp={'score':score,'res':res}
+    return render_template('results.html',result=exp)
 
 
 @app.route('/results/<int:marks>')
